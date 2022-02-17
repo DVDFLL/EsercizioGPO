@@ -1,0 +1,49 @@
+<head>
+    <title>Equazione di secondo grado </title>
+    
+</head>
+<body>
+    <h1 id="titolo">Risoluzione equazione di secondo grado </h1>
+        <form name="numeri">
+            <p class="sottotitolo">Inserire il numero in x al quadrato</p>
+            <input type="number" name="a" class="input" placeholder="Clicca per inserire...">
+            <br/>
+            <br/>
+            <p class="sottotitolo">Inserire il numero in x</p>
+            <input type="number" name="b" class="input" placeholder="Clicca per inserire..."/>
+			<br/>
+            <br/>
+			<p class="sottotitolo">Inserire il termine noto </p>
+            <input type="number" name="c" class="input" placeholder="Clicca per inserire..."/>
+         </form>
+        <input type="button" value="Invia" id="bottone" onclick="calcolo()">
+</body>
+<script>
+    function calcolo(){
+        var n1 = document.forms["numeri"]["a"].value;
+        var n2 = document.forms["numeri"]["b"].value;
+		var n3 = document.forms["numeri"]["c"].value;
+        var delta =  n2*n2-(4*(n1*n3));
+		var risultato = 0; 
+		var risultato2 = 0;
+		
+        if(delta < 0){
+           alert("L'equazione non ammette radici");
+        }
+		else if(delta == 0) {
+            risultato = (-n2) / (2*n1);
+			alert("La soluzione dell'equazione è uguale a: "+risultato);
+        }
+		else if(delta > 0){
+			 delta = Math.sqrt(delta);
+		     risultato = [-n2-(delta)]/(2*n1);
+			 risultato2 = [-n2+(delta)]/(2*n1);
+			 alert("La soluzione dell'equazione è pari a: "+risultato);
+			 alert("La soluzione dell'equazione è pari a: "+risultato2);
+		}
+		
+	}
+		
+</script>
+
+</html>
